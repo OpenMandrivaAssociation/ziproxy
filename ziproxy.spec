@@ -18,7 +18,6 @@ BuildRequires:	jpeg-devel
 BuildRequires:	libungif-devel
 BuildRequires:	png-devel
 BuildRequires:	X11-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 Ziproxy is a forwarding (non-caching) proxy that gzips text and HTML files, and
