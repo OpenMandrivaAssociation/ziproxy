@@ -1,6 +1,6 @@
 Summary:	A http compression and optimizer, non-caching, fully configurable proxy
 Name:		ziproxy
-Version:	2.4.3
+Version:	2.5.0
 Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
@@ -68,17 +68,20 @@ install -d %{buildroot}%{_sysconfdir}/logrotate.d
 install -d %{buildroot}%{_sysconfdir}/%{name}/errors
 install -d %{buildroot}/var/log/%{name}
 install -d %{buildroot}/var/run/%{name}
+install -d %{buildroot}%{_mandir}/man1
 
 install -m0755 src/%{name} %{buildroot}%{_sbindir}/%{name}
 install -m0755 src/tools/ziproxylogtool %{buildroot}%{_bindir}/
 install -m0755 src/tools/ziproxy_genhtml_stats.sh %{buildroot}%{_bindir}/ziproxy_genhtml_stats
 
-install -m0644 etc/%{name}.conf %{buildroot}%{_sysconfdir}/ziproxy/
+install -m0644 etc/%{name}/%{name}.conf %{buildroot}%{_sysconfdir}/ziproxy/
 install -m0644 var/%{name}/error/*.html %{buildroot}%{_sysconfdir}/ziproxy/errors/
 
 install -m0755 ziproxy.init %{buildroot}%{_initrddir}/%{name}
 install -m0644 ziproxy.sysconfig %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 install -m0644 ziproxy.logrotate %{buildroot}%{_sysconfdir}/logrotate.d/%{name}
+
+install -m0644 man/*.1 %{buildroot}%{_mandir}/man1/
 
 %post
 %_post_service %{name}
@@ -103,3 +106,4 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %{_bindir}/ziproxy_genhtml_stats
 %attr(0700,root,root) %dir /var/log/%{name}
 %attr(0700,root,root) %dir /var/run/%{name}
+%{_mandir}/man1/*
