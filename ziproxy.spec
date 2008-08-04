@@ -1,7 +1,7 @@
 Summary:	A http compression and optimizer, non-caching, fully configurable proxy
 Name:		ziproxy
 Version:	2.5.1
-Release:	%mkrel 1
+Release:	%mkrel 3
 License:	GPL
 Group:		System/Servers
 URL:		http://ziproxy.sourceforge.net/
