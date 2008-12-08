@@ -1,6 +1,6 @@
 Summary:	A http compression and optimizer, non-caching, fully configurable proxy
 Name:		ziproxy
-Version:	2.5.2
+Version:	2.6.0
 Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
@@ -18,7 +18,7 @@ BuildRequires:	jpeg-devel
 BuildRequires:	libungif-devel
 BuildRequires:	png-devel
 BuildRequires:	X11-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Ziproxy is a forwarding (non-caching) proxy that gzips text and HTML files, and
