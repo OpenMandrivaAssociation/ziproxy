@@ -18,6 +18,7 @@ BuildRequires:	jpeg-devel
 BuildRequires:	libungif-devel
 BuildRequires:	png-devel
 BuildRequires:	X11-devel
+BuildRequires:	sasl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -53,6 +54,7 @@ libtoolize --copy --force; aclocal -I config; autoheader; automake --foreign --a
     --with-png=%{_prefix} \
     --with-pthread=%{_prefix} \
     --with-jasper=%{_prefix} \
+    --with-sasl2=%{_prefix} \
     --with-cfgfile=%{_sysconfdir}/ziproxy/ziproxy.conf
 
 %make
