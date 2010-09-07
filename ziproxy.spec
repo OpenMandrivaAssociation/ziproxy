@@ -18,7 +18,7 @@ BuildRequires:	jpeg-devel
 BuildRequires:	libungif-devel
 BuildRequires:	png-devel
 BuildRequires:	X11-devel
-BuildRequires:	libgsasl-devel
+BuildRequires:	libsasl2-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
