@@ -1,7 +1,7 @@
 Summary:	A http compression and optimizer, non-caching, fully configurable proxy
 Name:		ziproxy
 Version:	3.2.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		System/Servers
 URL:		http://ziproxy.sourceforge.net/
@@ -17,7 +17,6 @@ BuildRequires:	jasper-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	libungif-devel
 BuildRequires:	png-devel
-BuildRequires:	X11-devel
 BuildRequires:	libsasl2-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -44,15 +43,8 @@ perl -pi -e "s|/lib\b|/%{_lib}|g" config/*.m4
 
 %build
 %serverbuild
-
-rm -rf autom4te.cache configure
-libtoolize --copy --force; aclocal -I config; autoheader; automake --foreign --add-missing --copy; autoconf
-
+autoreconf -fi
 %configure2_5x \
-    --with-gif=%{_prefix} \
-    --with-jpeg=%{_prefix} \
-    --with-png=%{_prefix} \
-    --with-pthread=%{_prefix} \
     --with-jasper=%{_prefix} \
     --with-sasl2=%{_prefix} \
     --with-cfgfile=%{_sysconfdir}/ziproxy/ziproxy.conf
@@ -102,6 +94,7 @@ rm -rf %{buildroot}
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/logrotate.d/%{name}
 %attr(0700,root,root) %dir %{_sysconfdir}/%{name}
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/%{name}/%{name}.conf
+%attr(0700,root,root) %dir %{_sysconfdir}/%{name}/errors
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/%{name}/errors/*.html
 %attr(0755,root,root) %{_sbindir}/%{name}
 %attr(0755,root,root) %{_bindir}/ziproxylogtool
