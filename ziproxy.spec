@@ -1,7 +1,7 @@
 Summary:	A http compression and optimizer, non-caching, fully configurable proxy
 Name:		ziproxy
-Version:	3.2.0
-Release:	%mkrel 2
+Version:	3.2.1
+Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
 URL:		http://ziproxy.sourceforge.net/
@@ -15,7 +15,7 @@ Requires(preun): rpm-helper
 BuildRequires:	flex
 BuildRequires:	jasper-devel
 BuildRequires:	jpeg-devel
-BuildRequires:	libungif-devel
+BuildRequires:	libgif-devel
 BuildRequires:	png-devel
 BuildRequires:	libsasl2-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
