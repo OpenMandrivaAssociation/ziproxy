@@ -15,7 +15,7 @@ Requires(preun): rpm-helper
 BuildRequires:	flex
 BuildRequires:	jasper-devel
 BuildRequires:	jpeg-devel
-BuildRequires:	libungif-devel
+BuildRequires:	ungif-devel
 BuildRequires:	png-devel
 BuildRequires:	libsasl2-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
