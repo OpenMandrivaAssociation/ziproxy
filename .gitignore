@@ -1,0 +1,4 @@
+ziproxy-3.2.1.tar.bz2
+ziproxy.init
+ziproxy.logrotate
+ziproxy.sysconfig

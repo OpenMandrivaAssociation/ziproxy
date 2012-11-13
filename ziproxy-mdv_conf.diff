@@ -1,0 +1,63 @@
+--- etc/ziproxy/ziproxy.conf	2010-03-08 10:23:20.000000000 +0100
++++ etc/ziproxy/ziproxy.conf.dlucio	2010-04-21 01:45:27.000000000 +0200
+@@ -6,18 +6,18 @@
+ 
+ ## Port to listen for proxy connections
+ ## default: 8080
+-# Port = 8080
++Port = 8080
+ 
+ ## Local address to listen for proxy connections
+ ## If you have more than one network interface,
+ ## it's useful for restricting to which interface you want to bind to.
+ ## By default Ziproxy binds to all interfaces.
+-# Address = "127.0.0.1"
++Address = "127.0.0.1"
+ 
+ ## Accepts conections only from that address.
+ ## WARNING: Remember to restrict the access to Ziproxy
+ ## if your machine is directly connected to the Internet.
+-# OnlyFrom = "127.0.0.1"
++OnlyFrom = "127.0.0.1"
+ 
+ ## Limits the number of simultaneous active user connections.
+ ## This does not affect the connection queue (see: SOMAXCONN).
+@@ -241,7 +241,7 @@
+ ##	5 (SIGSYS received)
+ ##	X (SIGTERM received - also happens when interrupting the daemon while transferring)
+ ## Disabled by default.
+-# AccessLog = "/var/log/ziproxy/access.log"
++AccessLog = "/var/log/ziproxy/access.log"
+ 
+ ## When enabled, Ziproxy will intercept signals indicative of
+ ## software crash, flag the offending request in access log
+@@ -731,21 +731,21 @@
+ ## Note: The internal defaults give more precise error messages.
+ ##
+ ## 400 - Bad request (malformed URL, or unknown URL type)
+-# CustomError400="/var/ziproxy/error/400.html"
++CustomError400="/var/ziproxy/error/400.html"
+ ## 403 - Forbidden
+-# CustomError403="/var/ziproxy/error/403.html"
++CustomError403="/var/ziproxy/error/403.html"
+ ## 404 - Unknown host (Ziproxy will not issue 'page not found' errors itself)
+-# CustomError404="/var/ziproxy/error/404.html"
++CustomError404="/var/ziproxy/error/404.html"
+ ## 407 - Proxy Authentication Required
+-# CustomError407="/var/ziproxy/error/407.html"
++CustomError407="/var/ziproxy/error/407.html"
+ ## 408 - Request timed out
+-# CustomError408="/var/ziproxy/error/408.html"
++CustomError408="/var/ziproxy/error/408.html"
+ ## 409 - Conflict
+-# CustomError409="/var/ziproxy/error/409.html"
++CustomError409="/var/ziproxy/error/409.html"
+ ## 500 - Internal error (or empty response from server)
+-# CustomError500="/var/ziproxy/error/500.html"
++CustomError500="/var/ziproxy/error/500.html"
+ ## 503 - Connection refused (or service unavailable)
+-# CustomError503="/var/ziproxy/error/503.html"
++CustomError503="/var/ziproxy/error/503.html"
+ 
+ 
+ 
