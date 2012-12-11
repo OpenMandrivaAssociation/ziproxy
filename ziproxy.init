@@ -1,0 +1,72 @@
+#!/bin/bash
+#
+# ziproxy	This shell script takes care of starting and stopping ziproxy.
+#
+# chkconfig: - 86 14
+# description: A http compression and optimizer, non-caching, fully configurable proxy.
+# probe: false
+# processname: ziproxy
+# pidfile: /var/run/ziproxy/ziproxy.pid
+# config: /etc/sysconfig/ziproxy
+### BEGIN INIT INFO
+# Provides: ziproxy
+# Required-Start: $network
+# Required-Stop: $network
+# Default-Start: 3 4 5
+# Short-Description: A http compression and optimizer, non-caching, fully configurable proxy.
+# Description: A http compression and optimizer, non-caching, fully configurable proxy.
+### END INIT INFO
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+[ "${NETWORKING}" = "no" ] && exit 0
+
+[ -f /usr/sbin/ziproxy ] || exit 0
+
+[ -f /etc/sysconfig/ziproxy ] && . /etc/sysconfig/ziproxy
+
+# See how we were called.
+case "$1" in
+  start)
+	if [ -n "`/sbin/pidof ${ZIPROXY_DAEMON:-"ziproxy"}`" ]; then
+            echo -n "${ZIPROXY_DAEMON:-"ziproxy"}: already running"
+	    RETVAL=$?
+	    echo
+	    exit $RETVAL
+        fi
+	echo -n "Starting ziproxy: "
+	daemon ${ZIPROXY_DAEMON:-"ziproxy"} -d \
+	${ZIPROXY_CONFIGFILE:-"-c /etc/ziproxy/ziproxy.conf"} \
+	${ZIPROXY_OPTIONS:-""} | head -1 > ${ZIPROXY_PID:-"/var/run/ziproxy/ziproxy.pid"}
+	RETVAL=$?
+	[ $RETVAL -eq 0 ] && success || failure
+	echo
+	[ $RETVAL -eq 0 ] && touch /var/lock/subsys/ziproxy
+	;;
+  stop)
+	echo -n "Stopping ziproxy: "
+	killproc -p ${ZIPROXY_PID:-"/var/run/ziproxy/ziproxy.pid"} ${ZIPROXY_DAEMON:-"ziproxy"}
+	RETVAL=$?
+	echo
+	[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/ziproxy ${ZIPROXY_PID:-"/var/run/ziproxy/ziproxy.pid"}
+	;;
+  status)
+	status ${ZIPROXY_DAEMON:-"ziproxy"}
+	RETVAL=$?
+	;;
+  restart|reload)
+	$0 stop
+	$0 start
+	RETVAL=$?
+	;;
+  *)
+	echo "Usage: ziproxy {start|stop|status|restart|condrestart|reload}"
+	exit 1
+esac
+
+exit $RETVAL

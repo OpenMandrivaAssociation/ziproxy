@@ -1,5 +1,2 @@
 sources:
-  "ziproxy-3.2.1.tar.bz2:"	dab2c504e155ae2d45039a4a91a52af009d312ea
-  "ziproxy.init:"	98ff318afe0e69e3b1675b60c7a8b30f5134814d
-  "ziproxy.logrotate:"	ac48c1a097040eceae9e8741ff212a1ab840ad47
-  "ziproxy.sysconfig:"	83137e643587bef020e1935e23128d9a2b7effaf
+  "ziproxy-3.2.1.tar.bz2": dab2c504e155ae2d45039a4a91a52af009d312ea

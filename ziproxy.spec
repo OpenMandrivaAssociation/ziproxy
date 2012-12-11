@@ -102,3 +102,105 @@ rm -rf %{buildroot}
 %attr(0700,root,root) %dir /var/log/%{name}
 %attr(0700,root,root) %dir /var/run/%{name}
 %{_mandir}/man1/*
+
+
+%changelog
+* Sat Feb 11 2012 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.2.1-1mdv2012.0
++ Revision: 773361
+- 3.2.1
+
+* Fri Jan 21 2011 Funda Wang <fwang@mandriva.org> 3.2.0-2
++ Revision: 632000
+- X is not required
+
+* Wed Sep 08 2010 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.2.0-1mdv2011.0
++ Revision: 576720
+- libgsasl-devel as BR
+- 3.2.0
+- 3.2.0
+
+* Sun Jul 18 2010 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.1.3-1mdv2011.0
++ Revision: 554766
+- 3.1.3
+
+* Fri Jul 09 2010 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.1.2-1mdv2011.0
++ Revision: 549863
+- 3.1.2
+
+* Tue Jun 15 2010 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.1.1-1mdv2010.1
++ Revision: 548071
+- New 3.1.1
+
+* Thu Jun 03 2010 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.1.0-1mdv2010.1
++ Revision: 547059
+- New 3.1.0
+
+* Fri May 21 2010 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.0.1-1mdv2010.1
++ Revision: 545555
+- 3.0.1
+
+* Wed Apr 21 2010 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.0.0-1mdv2010.1
++ Revision: 537289
+- New 3.0
+  P0 rediffed
+
+* Wed Sep 30 2009 Oden Eriksson <oeriksson@mandriva.com> 2.7.2-1mdv2010.0
++ Revision: 451346
+- 2.7.2
+
+* Mon Aug 17 2009 Oden Eriksson <oeriksson@mandriva.com> 2.7.0-2mdv2010.0
++ Revision: 417299
+- rebuilt against libjpeg v7
+
+* Tue Apr 14 2009 Oden Eriksson <oeriksson@mandriva.com> 2.7.0-1mdv2009.1
++ Revision: 366863
+- 2.7.0 (fixes US-CERT VU#435052)
+- rediffed P0
+
+* Mon Dec 08 2008 Oden Eriksson <oeriksson@mandriva.com> 2.6.0-1mdv2009.1
++ Revision: 311888
+- 2.6.0
+- rediffed P0
+
+* Thu Sep 04 2008 Jérôme Soyer <saispo@mandriva.org> 2.5.2-1mdv2009.0
++ Revision: 280717
+- New release
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - rebuild
+
+* Tue Mar 11 2008 Oden Eriksson <oeriksson@mandriva.com> 2.5.1-1mdv2008.1
++ Revision: 185611
+- 2.5.1
+
+* Wed Jan 30 2008 Oden Eriksson <oeriksson@mandriva.com> 2.5.0-1mdv2008.1
++ Revision: 160265
+- 2.5.0
+- rediffed P0
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Sun Dec 16 2007 Oden Eriksson <oeriksson@mandriva.com> 2.4.3-1mdv2008.1
++ Revision: 120605
+- 2.4.3
+
+* Wed Dec 05 2007 Oden Eriksson <oeriksson@mandriva.com> 2.4.2-1mdv2008.1
++ Revision: 115580
+- 2.4.2
+- rediffed P0
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - buildrequires X11-devel instead of XFree86-devel
+
+* Sun Nov 25 2007 Oden Eriksson <oeriksson@mandriva.com> 2.4.1-1mdv2008.1
++ Revision: 111885
+- import ziproxy
+
+
+* Sun Nov 25 2007 Oden Eriksson <oeriksson@mandriva.com> 2.4.1-1mdv2008.1
+- initial Mandriva package

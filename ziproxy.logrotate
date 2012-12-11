@@ -1,0 +1,13 @@
+/var/log/ziproxy/access.log {
+    weekly
+    missingok
+    rotate 10
+    compress
+    delaycompress
+    notifempty
+    create 0640 root root
+    sharedscripts
+    postrotate
+	/bin/kill -HUP `cat /var/run/ziproxy/ziproxy.pid 2> /dev/null` 2> /dev/null || true
+    endscript
+}
