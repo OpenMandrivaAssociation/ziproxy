@@ -6,7 +6,7 @@
 # description: A http compression and optimizer, non-caching, fully configurable proxy.
 # probe: false
 # processname: ziproxy
-# pidfile: /var/run/ziproxy/ziproxy.pid
+# pidfile: /run/ziproxy/ziproxy.pid
 # config: /etc/sysconfig/ziproxy
 ### BEGIN INIT INFO
 # Provides: ziproxy
@@ -42,7 +42,7 @@ case "$1" in
 	echo -n "Starting ziproxy: "
 	daemon ${ZIPROXY_DAEMON:-"ziproxy"} -d \
 	${ZIPROXY_CONFIGFILE:-"-c /etc/ziproxy/ziproxy.conf"} \
-	${ZIPROXY_OPTIONS:-""} | head -1 > ${ZIPROXY_PID:-"/var/run/ziproxy/ziproxy.pid"}
+	${ZIPROXY_OPTIONS:-""} | head -1 > ${ZIPROXY_PID:-"/run/ziproxy/ziproxy.pid"}
 	RETVAL=$?
 	[ $RETVAL -eq 0 ] && success || failure
 	echo
@@ -50,10 +50,10 @@ case "$1" in
 	;;
   stop)
 	echo -n "Stopping ziproxy: "
-	killproc -p ${ZIPROXY_PID:-"/var/run/ziproxy/ziproxy.pid"} ${ZIPROXY_DAEMON:-"ziproxy"}
+	killproc -p ${ZIPROXY_PID:-"/run/ziproxy/ziproxy.pid"} ${ZIPROXY_DAEMON:-"ziproxy"}
 	RETVAL=$?
 	echo
-	[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/ziproxy ${ZIPROXY_PID:-"/var/run/ziproxy/ziproxy.pid"}
+	[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/ziproxy ${ZIPROXY_PID:-"/run/ziproxy/ziproxy.pid"}
 	;;
   status)
 	status ${ZIPROXY_DAEMON:-"ziproxy"}

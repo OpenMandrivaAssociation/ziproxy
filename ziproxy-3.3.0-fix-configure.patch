@@ -1,0 +1,11 @@
+--- ziproxy-3.3.0/configure.in	2013-01-05 21:40:15.000000000 -0500
++++ ziproxy-3.3.0/configure.in.dlucio	2013-05-20 17:04:55.282543228 -0400
+@@ -3,7 +3,7 @@ AC_INIT(src/ziproxy.c)
+ AC_CONFIG_AUX_DIR(config)
+ AM_INIT_AUTOMAKE(ziproxy, 3.3.0)
+ AC_PREFIX_DEFAULT(/usr/local)
+-AM_CONFIG_HEADER(src/config.h)
++AC_CONFIG_HEADERS(src/config.h)
+ 
+ dnl Checks for programs.
+ AC_PROG_CC

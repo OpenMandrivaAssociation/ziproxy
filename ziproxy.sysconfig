@@ -7,7 +7,7 @@ ZIPROXY_DAEMON="ziproxy"
 ZIPROXY_CONFIGFILE="-c /etc/ziproxy/ziproxy.conf"
         
 # the pid file
-ZIPROXY_PID="/var/run/ziproxy/ziproxy.pid"
+ZIPROXY_PID="/run/ziproxy/ziproxy.pid"
 
 # additional options
 ZIPROXY_OPTIONS=""

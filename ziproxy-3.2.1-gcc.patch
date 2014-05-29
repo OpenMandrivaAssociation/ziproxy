@@ -1,0 +1,20 @@
+--- ziproxy-3.2.1/src/image.c.orig	2012-02-08 21:02:15.000000000 +0800
++++ ziproxy-3.2.1/src/image.c	2013-01-15 10:33:25.139519219 +0800
+@@ -54,6 +54,8 @@
+ #include "config.h"
+ #endif
+ 
++#define FALSE 0
++#define TRUE 1
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <assert.h>
+@@ -1738,7 +1740,7 @@
+ 		cmptparm->width = cwidth [cmptno];
+ 		cmptparm->height = cheight [cmptno];
+ 		cmptparm->prec = cbitlen [cmptno];
+-		cmptparm->sgnd = false;	// we only generate unsigned components
++		cmptparm->sgnd = FALSE;	// we only generate unsigned components
+ 
+ 		cshiftR [cmptno] = 8 - cbitlen [cmptno]; // calculate the resampling shift for this component
+ 	}
