@@ -12,6 +12,7 @@ Source3:	ziproxy.logrotate
 Patch0:		ziproxy-mdv_conf.diff
 Patch1:		ziproxy-3.2.1-gcc.patch
 Patch2:		ziproxy-3.3.0-fix-configure.patch
+Patch3:		ziproxy-3.3.0-giflib51.patch
 BuildRequires:	flex
 BuildRequires:	giflib-devel
 BuildRequires:	jpeg-devel
@@ -58,6 +59,7 @@ statistics, basic authentication, and more.
 %patch0 -p0
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 cp %{SOURCE1} ziproxy.init
 cp %{SOURCE2} ziproxy.sysconfig

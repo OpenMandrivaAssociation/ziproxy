@@ -1,0 +1,27 @@
+diff -urN ziproxy-3.3.0/src/image.c ziproxy-3.3.0-patched/src/image.c
+--- ziproxy-3.3.0/src/image.c	2013-01-05 03:48:50.000000000 +1100
++++ ziproxy-3.3.0-patched/src/image.c	2014-05-30 01:48:15.002815015 +1100
+@@ -905,7 +905,11 @@
+ 	desc.size=insize;
+ 	desc.x.pos=0;
+ 
++#if GIFLIB_MAJOR >= 5
++	if ((GifFile = DGifOpen((void*)&desc, &gif_mem_input, NULL)) == NULL)
++#else
+ 	if ((GifFile = DGifOpen((void*)&desc, &gif_mem_input)) == NULL) 
++#endif
+     		return( IMG_RET_ERR_UNKNOWN + IMG_RET_FLG_WHILE_DECOMP);//more possible reasons
+ 
+ 	bmp = new_raw_bitmap();
+@@ -1083,7 +1087,11 @@
+ 	}
+ 	bmp->pal_bpp = bmp->bpp;
+ 	
++#if GIFLIB_MAJOR * 100 + GIFLIB_MINOR >= 501
++	DGifCloseFile(GifFile, NULL);
++#else
+ 	DGifCloseFile(GifFile);
++#endif
+ 	return IMG_RET_OK;
+ }
+ 
