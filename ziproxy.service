@@ -1,0 +1,13 @@
+[Unit]
+Description=A http compression and optimizer, non-caching, fully configurable proxy.
+After=syslog.target network.target
+Wants=network.target
+
+[Service]
+Type=simple
+Environment=ZIPROXY_CONFIGFILE="-c /etc/ziproxy/ziproxy.conf"
+EnvironmentFile=-sysconfig/ziproxy
+ExecStart=/usr/sbin/ziproxy ${ZIPROXY_CONFIGFILE} ${ZIPROXY_OPTIONS}
+
+[Install]
+WantedBy=multi-user.target
