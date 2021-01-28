@@ -72,6 +72,8 @@ cp %{SOURCE3} ziproxy.logrotate
 perl -pi -e "s|/lib\b|/%{_lib}|g" config/*.m4
 
 %build
+export CC=gcc
+export CXX=g++
 %serverbuild
 autoreconf -fi
 %configure2_5x \
