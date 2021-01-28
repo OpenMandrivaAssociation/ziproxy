@@ -11,7 +11,7 @@ Source2:	ziproxy.sysconfig
 Source3:	ziproxy.logrotate
 Patch0:		ziproxy-mdv_conf.diff
 Patch1:		ziproxy-3.2.1-gcc.patch
-Patch2:		ziproxy-3.3.0-fix-configure.patch
+#Patch2:		ziproxy-3.3.0-fix-configure.patch
 Patch3:		ziproxy-3.3.0-giflib51.patch
 BuildRequires:	flex
 BuildRequires:	giflib-devel
