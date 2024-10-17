@@ -4,7 +4,7 @@ Version:	3.3.0
 Release:	7
 License:	GPLv2+
 Group:		System/Servers
-Url:		http://ziproxy.sourceforge.net/
+Url:		https://ziproxy.sourceforge.net/
 Source0:	http://www.dancab.com/proj/ziproxy/files/%{name}-%{version}.tar.xz
 Source1:	ziproxy.service
 Source2:	ziproxy.sysconfig
