@@ -13,6 +13,11 @@ Patch0:		ziproxy-mdv_conf.diff
 Patch1:		ziproxy-3.2.1-gcc.patch
 Patch2:		ziproxy-3.3.0-fix-configure.patch
 Patch3:		ziproxy-3.3.0-giflib51.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	flex
 BuildRequires:	giflib-devel
 BuildRequires:	jpeg-devel
